@@ -19,13 +19,9 @@ module "camtags" {
   source = "../Modules/camtags"
 }
 
-variable "aws_instance" {
-  description = "test"
-  default = "us-east-1"
-}
-
-resource "aws_alb_listener" "name" {
-  alpn_policy = 
+variable "aws_region" {
+  description = "AWS region to launch servers."
+  default     = "us-east-1"
 }
 
 variable "vpc_name_tag" {
@@ -100,7 +96,18 @@ resource "aws_key_pair" "orpheus_public_key" {
   public_key = var.public_ssh_key
 }
 
-
+resource "aws_instance" "orpheus_ubuntu_micro" {
+  instance_type = var.aws_image_size
+  ami           = data.aws_ami.aws_ami.id
+  subnet_id     = data.aws_subnet.selected.id
+  key_name      = aws_key_pair.orpheus_public_key.id
+  tags = merge(
+    module.camtags.tagsmap,
+    {
+      "Name" = var.ibm_stack_name
+    },
+  )
+}
 
 output "ip_address" {
   value = length(aws_instance.orpheus_ubuntu_micro.public_ip) > 0 ? aws_instance.orpheus_ubuntu_micro.public_ip : aws_instance.orpheus_ubuntu_micro.private_ip
