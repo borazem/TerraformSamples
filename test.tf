@@ -7,9 +7,12 @@ data "aws_ami" "ubuntu" {
   owners = ["099720109477"]
 }
 
+variable "aws_image_size" {
+  default = "t2.small"
+}
 
 resource "aws_instance" "my-instance1" {
   ami           = data.aws_ami.ubuntu.id
-  instance_type = "t2.small"
+  instance_type = var.aws_image_size
   tags          = { Name = "my-instance1" }
 }
