@@ -14,7 +14,7 @@
       {
         "name": "public_ssh_key",
         "label": "public_ssh_key",
-        "type": "password",
+        "type": "string",
         "description": "",
         "required": true,
         "secured": false,
