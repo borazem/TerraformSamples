@@ -24,8 +24,7 @@ variable "public_ssh_key" {
   
 resource "aws_key_pair" "mykey" {
   public_key = var.public_ssh_key
-  key_name = var.public_ssh_key_name
-  
+  key_name = var.public_ssh_key_name  
 }
 
 resource "aws_instance" "my-instance1" {
