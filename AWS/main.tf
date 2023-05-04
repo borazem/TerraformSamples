@@ -13,17 +13,15 @@ data "aws_ami" "ubuntu" {
 
 variable "instance_name" {
   default = "awssinglevm"
-}
-    
+}    
 variable "aws_image_size" {
   default = "t2.small"
 }
-
-variable "public_ssh_key" {
-}
 variable "public_ssh_key_name" {
 }
-
+variable "public_ssh_key" {
+}
+  
 resource "aws_key_pair" "mykey" {
   public_key = var.public_ssh_key
   key_name = var.public_ssh_key_name
