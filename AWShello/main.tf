@@ -5,7 +5,7 @@ provider "aws" {
 
 # Create an EC2 instance
 resource "aws_instance" "bp-template270524001" {
-  ami           = "ami-785db401"
+  ami           = "ami-0c55b159cbfafe1f0"
   instance_type = "t2.nano"
   key_name      = "bptest00527052401"
 
