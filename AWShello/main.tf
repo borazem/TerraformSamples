@@ -9,12 +9,12 @@ variable "public_ssh_key_name" {
 }
 
 # Create an EC2 instance
-resource "aws_instance" "bp-template270524001" {
+resource "aws_instance" "bp-template010624001" {
   ami           = "ami-03e9149278a6f457c"
   instance_type = "t2.nano"
   key_name      = var.public_ssh_key_name
 
   tags = {
-    Name = "bp-template270524001"
+    Name = "bp-template010624001"
   }
 }
