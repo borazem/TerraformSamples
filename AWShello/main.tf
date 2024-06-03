@@ -5,7 +5,7 @@ provider "aws" {
 
 variable "dialog_stack_name" {
   type    = string
-  default = "awssamplevm1"
+  default = "awssamplevm"
 }
 variable "public_ssh_key_name" {
   description = "Name of the public SSH key used to connect to the virtual guest"
