@@ -3,7 +3,7 @@ provider "aws" {
   region = "us-east-1"
 }
 
-variable "stack_name" {
+variable "dialog_stack_name" {
   type    = string
   default = "awssamplevm1"
 }
@@ -19,6 +19,6 @@ resource "aws_instance" "bp_sample_template" {
   key_name      = var.public_ssh_key_name
 
   tags = {
-    Name = var.stack_name
+    Name = var.dialog_stack_name
   }
 }
