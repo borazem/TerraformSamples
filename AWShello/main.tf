@@ -3,7 +3,7 @@ provider "aws" {
   region = "us-east-1"
 }
 
-variable "dialog_stack_name" {
+variable "stack_name" {
   type    = string
   default = "awssamplevm"
 }
