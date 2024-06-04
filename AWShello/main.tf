@@ -19,6 +19,6 @@ resource "aws_instance" "bp_sample_template" {
   key_name      = var.public_ssh_key_name
 
   tags = {
-    Name = var.dialog_stack_name
+    Name = var.stack_name
   }
 }
