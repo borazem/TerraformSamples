@@ -1,6 +1,6 @@
 # Configure the AWS provider
 provider "aws" {
-  region = "us-east-1"
+  region = "eu-central-1"
 }
 
 variable "stack_name" {
