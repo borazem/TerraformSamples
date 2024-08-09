@@ -14,7 +14,7 @@ variable "public_ssh_key_name" {
 
 # Create an EC2 instance
 resource "aws_instance" "bp_sample_template" {
-  ami           = "ami-03e9149278a6f457c"
+  ami           = "ami-00060fac2f8c42d30"
   instance_type = "t2.nano"
   key_name      = var.public_ssh_key_name
 
